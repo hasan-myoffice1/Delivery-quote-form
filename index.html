@@ -11,6 +11,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"
 		defer></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
 	<link rel="stylesheet" href="./style.css">
 
@@ -19,61 +20,313 @@
 <body>
 
 	<section>
-		<div class="container">
+		<div class="container my-3">
 			<p class="text-center fs-3 py-2">Get Instant Quote</p>
 
 			<!-- Tab links -->
-			<div class="tab">
-				<button class="tab-links" onclick="openCity(event, 'Location')" id="defaultOpen">1. Location</button>
-				<button class="tab-links" onclick="openCity(event, 'Date')" >2. Date</button>
-				<button class="tab-links" onclick="openCity(event, 'Address')">3. Address</button>
-				<button class="tab-links" onclick="openCity(event, 'Package')">4. Package</button>
-			</div>
-
-			<!-- Tab content -->
-			<div id="Location" class="tab-content">
-				<form class="form">
-					<div class="form-group">
-					  <label for="pickup-location">Pickup Location <span class="required">*</span></label>
-					  <input type="text" id="pickup-location" placeholder="Enter Suburb" required>
-					</div>
-					<div class="form-group">
-					  <label for="delivery-location">Delivery Location <span class="required">*</span></label>
-					  <input type="text" id="delivery-location" placeholder="Enter Suburb" required>
-					</div>
-				</form>
-				
-				<div class="form-navigation">
-					<button type="button" class="btn btn-secondary" disabled>Previous</button>
-					<button type="submit" class="btn btn-primary" onclick="openCity(event, 'Date')">Next</button>
+			<div class="row tab mx-2 g-2">
+				<div class="col-lg-3 col-6">
+					<button class="tab-links" onclick="openCity(event, 'Location')" id="defaultOpen">1. Location</button>
+				</div>
+				<div class="col-lg-3 col-6">
+					<button class="tab-links" onclick="openCity(event, 'Date')" >2. Date</button>
+				</div>
+				<div class="col-lg-3 col-6">
+					<button class="tab-links" onclick="openCity(event, 'Address')">3. Address</button>
+				</div>
+				<div class="col-lg-3 col-6">
+					<button class="tab-links" onclick="openCity(event, 'Package')">4. Package</button>
 				</div>
 			</div>
 
-			<div id="Date" class="tab-content">
-				<form class="form"> 
-
-				</form>
+			<!-- Tab content -->
+			<div id="Location" class="tab-content mt-4 mx-2 rounded">
+				<div class="row">
+					<div class="col-lg-6">
+						<form class="p-5">
+							<div class="row mb-3">
+								<div class="col-4">
+									<label for="exampleInputEmail1" class="form-label">Pickup Location <span class="text-danger">*</span> </label>
+								</div>
+								<div class="col-8">
+									<input type="email" class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp">
+								</div>
+							</div>
+							<div class="row ">
+								<div class="col-4">
+									<label for="exampleInputEmail1" class="form-label">Delivery Location<span class="text-danger">*</span></label>
+								</div>
+								<div class="col-8">
+									<input type="email" class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp">
+								</div>
+							</div>
+							<p class="mt-5 text-danger fw-bold fs-5 mb-0">Total Distance : 294 km</p>
+							<p class="m-0" style="font-size: 13px;">(Bike option is only available for delivery within a 50km radius)</p>	 
+						</form>
+					</div>
+					<div class="col-lg-6 p-5">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d197124.37683841205!2d-0.2664030556096407!3d51.528739805074714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sbd!4v1732704828799!5m2!1sen!2sbd" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
+					</div>
+				</div>
 				
-				<div class="form-navigation">
-					<button type="button" class="btn btn-secondary" disabled>Previous</button>
-					<button type="submit" class="btn btn-primary">Next</button>
-				  </div>
+			</div>
+			<div id="Date" class="tab-content mt-4 mx-2 rounded">
+				<div class="row p-5">
+					<div class="col-lg-4 justify-content-between border-end border-secondary-subtle">
+						<p class="text-center fs-5 text-secondary">Select Service Type</p> 
+						<select class="form-select form-select-lg mb-3" aria-label="Large select example">
+							<option selected class="text-secondary">select type</option>
+							<option value="1">
+								<img src=".." style=" width: 20px;height: 20px; background-color: rgb(9, 9, 9);" class="img-fluid" alt="">
+							    <span>SAME DAY - Monday/Friday</span>	
+							</option>
+							<option value="2">Weekend Delivery/Premium Free Applies </option>		 
+						</select>
+						<div id="..." class="text-center mt-5">
+							<img src="" alt="" class="img-fluid" style="height: 100px; width: 100px; background-color: rgb(119, 119, 119);">
+							<p>Saturday/Sunday</p>
+						</div>
+					</div>
+					<div class="col-lg-4 border-end border-secondary-subtle ">
+						<p class="text-center fs-5 text-secondary">Select Service Type</p> 
+
+						<select class="form-select form-select-lg mb-3" aria-label="Large select example">
+							<option selected class="text-secondary">select type</option>
+							<option value="motorBike">Motor Bike</option>
+							<option value="car">Car</option>
+							<option value="smallVan">Small Van</option>
+							<option value="largeVan">Large Van</option>
+						  </select>
+
+						  <div id="..." class="d-flex justify-content-around mt-5">
+							<img src="" alt="" class="img-fluid" style="height: 70px; width: 130px; background-color: rgb(119, 119, 119);">
+							<p class="ms-3"> Payload : 500kg to 900kg <br>
+								Dimension : <br>
+								Length: 1.7 meters <br>
+								Width: 1.5 meters <br>
+								Height: 1.2 meters</p>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<p class="text-center fs-5 text-secondary">Select Date</p> 
+						<input type="date" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" >
+			 
+						<p class="mt-5 text-center">Date : 28/11/2024</p>
+					 
+					</div>
+					 
+				</div>
+				 <p class="text-center text-danger">Parcel Cost : € 820 <br>
+					Fuel Cost : € 250 <br>
+					Total Cost : € 1070</p>
+				
 			</div>
 
-			<div id="Address" class="tab-content">
-				<h3>Tokyo</h3>
-				<p>Tokyo is the capital of Japan.</p>
+
+			<div id="Address" class="tab-content mt-4 mx-2 rounded">
+				<div class="row">
+					<div class="col-lg-6">
+						<form class="address-form p-5">
+							<div class="mb-3">
+								<label for="selectType" class="form-label">Select Type</label>
+								<select class="form-select" id="selectType">
+									<option selected>Select Type</option>
+									<option value="business">Business</option>
+									<option value="residence">Residence</option>
+									<option value="depot">Depot</option>
+								</select>
+							</div>
+							<div class="mb-3">
+								<label for="eirCode" class="form-label">EIR Code<span class="text-danger">*</span></label>
+								<input type="text" class="form-control" id="eirCode" placeholder="EIRCODE">
+							</div>
+							<div class="mb-3">
+								<label for="space" class="form-label">Space<span class="text-danger">*</span></label>
+								<select class="form-select" id="space">
+									<option selected>Select Space</option>
+									<option value="1">Loading Bay</option>
+									<option value="2">Packing Space</option>
+									<option value="3">Reception</option>
+								</select>
+							</div>
+							<div class="mb-3">
+								<label for="name" class="form-label">Name<span class="text-danger">*</span></label>
+								<input type="text" class="form-control" id="name" placeholder="Enter Name">
+							</div>
+							<div class="mb-3">
+								<label for="email" class="form-label">Email<span class="text-danger">*</span></label>
+								<input type="email" class="form-control" id="email" placeholder="Enter Email">
+							</div>
+							<div class="mb-3">
+								<label for="phone" class="form-label">Phone<span class="text-danger">*</span></label>
+								<input type="tel" class="form-control" id="phone" placeholder="Enter Phone">
+							</div>
+							<div class="mb-3">
+								<label for="address" class="form-label">Address<span class="text-danger">*</span></label>
+								<input type="text" class="form-control" id="address" placeholder="House Number & Building Name">
+							</div>
+							<div class="mb-3">
+								<label for="floorLevel" class="form-label">Floor Level</label>
+								<input type="text" class="form-control" id="floorLevel" placeholder="Enter Floor level (If Office Address)">
+							</div>
+							<div class="mb-3">
+								<label for="place" class="form-label">Place</label>
+								<input type="text" class="form-control" id="place" placeholder="Place">
+							</div>
+							<div class="mb-3">
+								<label for="county" class="form-label">County<span class="text-danger">*</span></label>
+								<input type="text" class="form-control" id="county" placeholder="County">
+							</div>
+							<div class="mb-3">
+								<label for="otherComments" class="form-label">Other Comments</label>
+								<textarea class="form-control" id="otherComments" rows="2"></textarea>
+							</div>
+							 
+						</form>
+					</div>
+					<div class="col-lg-6">
+						<form class="address-form p-5">
+							<div class="mb-3">
+								<label for="selectType" class="form-label">Select Type</label>
+								<select class="form-select" id="selectType">
+									<option selected>Select Type</option>
+									<option value="business">Business</option>
+									<option value="residence">Residence</option>
+									<option value="depot">Depot</option>
+								</select>
+							</div>
+							<div class="mb-3">
+								<label for="eirCode" class="form-label">EIR Code<span class="text-danger">*</span></label>
+								<input type="text" class="form-control" id="eirCode" placeholder="EIRCODE">
+							</div>
+							<div class="mb-3">
+								<label for="space" class="form-label">Space<span class="text-danger">*</span></label>
+								<select class="form-select" id="space">
+									<option selected>Select Space</option>
+									<option value="1">Loading Bay</option>
+									<option value="2">Packing Space</option>
+									<option value="3">Reception</option>
+								</select>
+							</div>
+							<div class="mb-3">
+								<label for="name" class="form-label">Name<span class="text-danger">*</span></label>
+								<input type="text" class="form-control" id="name" placeholder="Enter Name">
+							</div>
+							<div class="mb-3">
+								<label for="email" class="form-label">Email<span class="text-danger">*</span></label>
+								<input type="email" class="form-control" id="email" placeholder="Enter Email">
+							</div>
+							<div class="mb-3">
+								<label for="phone" class="form-label">Phone<span class="text-danger">*</span></label>
+								<input type="tel" class="form-control" id="phone" placeholder="Enter Phone">
+							</div>
+							<div class="mb-3">
+								<label for="address" class="form-label">Address<span class="text-danger">*</span></label>
+								<input type="text" class="form-control" id="address" placeholder="House Number & Building Name">
+							</div>
+							<div class="mb-3">
+								<label for="floorLevel" class="form-label">Floor Level</label>
+								<input type="text" class="form-control" id="floorLevel" placeholder="Enter Floor level (If Office Address)">
+							</div>
+							<div class="mb-3">
+								<label for="place" class="form-label">Place</label>
+								<input type="text" class="form-control" id="place" placeholder="Place">
+							</div>
+							<div class="mb-3">
+								<label for="county" class="form-label">County<span class="text-danger">*</span></label>
+								<input type="text" class="form-control" id="county" placeholder="County">
+							</div>
+							<div class="mb-3">
+								<label for="otherComments" class="form-label">Other Comments</label>
+								<textarea class="form-control" id="otherComments" rows="2"></textarea>
+							</div>
+							 
+						</form>
+					</div>
+					 
+				</div>
 			</div>
 
-			<div id="Package" class="tab-content">
-				<form class="form">
-
+			<div id="Package" class="tab-content mt-4 mx-2 rounded p-5">
+				<h4 class="mb-4 pb-3 border-bottom border-secondary-subtle">Package Details</h4>
+				<form>
+					<div class="row mb-3">
+						<div class="col-lg-1 text-end">
+							<button type="button" class="btn btn-success btn-sm rounded-circle">
+								<i class="bi bi-plus"></i>
+							</button>
+						</div>
+						<div class="col-lg-2">
+							<label for="packageType" class="form-label">Type<span class="text-danger">*</span></label>
+							<select class="form-select" id="packageType">
+								<option selected>Select Type</option>
+								<option value="Carton">Carton</option>
+								<option value="Container">Container</option>
+								<option value="Crate">Crate</option>
+								<option value="Drum">Drum</option>
+								<option value="Flat Pack">Flat Pack</option>
+								<option value="Machinery">Machinery</option>
+								<option value="Pallet">Pallet</option>
+								<option value="Roll">Roll</option>
+								<option value="Satchel">Satchel</option>
+								<option value="Skid">Skid</option>
+								<option value="Other">Other</option>
+								<option value="Full Semi Load">Full Semi Load</option>	 
+							</select>
+						</div>
+						<div class="col-lg-2">
+							<label for="weight" class="form-label">Weight<span class="text-danger">*</span></label>
+							<div class="input-group">
+								<input type="text" class="form-control" id="weight" placeholder="Weight">
+								<span class="input-group-text">kg</span>
+							</div>
+						</div>
+						<div class="col-lg-2">
+							<label for="length" class="form-label">Length<span class="text-danger">*</span></label>
+							<div class="input-group">
+								<input type="text" class="form-control" id="length" placeholder="Length">
+								<span class="input-group-text">cm</span>
+							</div>
+						</div>
+						<div class="col-lg-2">
+							<label for="width" class="form-label">Width<span class="text-danger">*</span></label>
+							<div class="input-group">
+								<input type="text" class="form-control" id="width" placeholder="Width">
+								<span class="input-group-text">cm</span>
+							</div>
+						</div>
+						<div class="col-lg-2">
+							<label for="height" class="form-label">Height<span class="text-danger">*</span></label>
+							<div class="input-group">
+								<input type="text" class="form-control" id="height" placeholder="Height">
+								<span class="input-group-text">cm</span>
+							</div>
+						</div>
+						<div class="col-lg-1">
+							<label for="quantity" class="form-label">Quantity<span class="text-danger">*</span></label>
+							<div class="input-group">
+								<button type="button" class="btn btn-outline-secondary btn-sm">-</button>
+								<input type="text" class="form-control text-center" id="quantity" value="1">
+								<button type="button" class="btn btn-outline-secondary btn-sm">+</button>
+							</div>
+						</div>
+					</div>
+					<div class="mb-3">
+						<label for="itemDescription" class="form-label">Item Description<span class="text-danger">*</span></label>
+						<textarea class="form-control" id="itemDescription" rows="3"></textarea>
+					</div>
+					 
+				    <p class="mb-0 me-3">Total Weight: <span>0.00kg</span></p>
+					<p class="mb-0">Volume Container: <span>0.00cm³</span></p>
+					 
 				</form>
 				
-				<div class="form-navigation">
-					<button type="button" class="btn btn-secondary" disabled>Previous</button>
-					<button type="submit" class="btn btn-primary">Next</button>
-				  </div>
+				 
+			</div>
+
+			<div class="my-4 me-0 float-end">
+				<button type="button" class="btn btn-secondary me-2" disabled>Previous</button>
+				<button type="submit" class="btn btn-primary">Next</button>
 			</div>
 		</div>
 	</section>

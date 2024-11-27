@@ -5,13 +5,7 @@
 
 .container {
 	background-color: #f6f6f6;
-	height: 90%;
-}
-
-.tab {
- 	overflow: hidden;
- 	display: flex;
-	justify-content: space-between;
+	min-height: 100%;
 }
 
 .tab button {
@@ -19,8 +13,7 @@
  	font-weight: 400;
  	border: 1px solid #ccc;
  	background-color: #d8d8d8;
- 	color: #7f7f7f;
- 	width: 24%;
+ 	width:100%;
  	text-align: start;
  	border: none;
  	outline: none;
@@ -41,32 +34,9 @@
 
 .tab-content {
  	display: none;
- 	padding:7px ;
  	border: 1px solid #ccc;
- 	border-top: none;
  	background-color: #e8e8e8;
- 	margin-top: 30px;
- 	border-radius: 5px;
-}
-
-
-form {
- 	background-color: #d8d8d8;
- 	border-radius: 5px;
- 	padding:150px 50px;
- 	margin-bottom: 30px;
-}
-
-.form-group label {
- 	width: 12%;
-}
-
-.form-group input {
- 	width: 50%;
- 	margin: 10px;
- 	padding: 7px;
- 	border: 1px solid #bdbdbd;
- 	border-radius: 5px;
+	min-height: 70%;
 }
 
 input:focus{
@@ -74,12 +44,14 @@ input:focus{
 	outline: none;
 }
 
-.required {
- 	color: red;
+
+.address-form .form-control, .address-form .form-select{
+	display: inline;
 }
 
-.form-navigation {
- 	display: flex;
- 	justify-content: end;
- 	gap: 10px;
+.address-form label {
+   width: 18%;
+}
+.address-form .form-control, .address-form .form-select {
+   width: 80%;
 }
